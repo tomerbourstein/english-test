@@ -1,0 +1,102 @@
+{
+  "article": {
+    "title": "The Rise of Female Heroes in the Marvel Cinematic Universe",
+    "article": "Over the years, the Marvel Cinematic Universe (MCU) has witnessed a significant transformation, particularly in terms of representation and diversity. One notable aspect of this evolution is the rise of female heroes who have taken center stage in various films. Gone are the days when female characters played supporting roles; now, they are powerful, complex, and pivotal to the MCU's narrative.... [Full article content here]"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Who was the first female hero introduced in the Marvel Cinematic Universe (MCU)?",
+      "possibleAnswers": [
+        { "answer": "Valkyrie", "isCorrect": false },
+        { "answer": "Captain Marvel", "isCorrect": true },
+        { "answer": "Black Widow", "isCorrect": false },
+        { "answer": "Wanda Maximoff", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which film marked the first female-led movie in the MCU?",
+      "possibleAnswers": [
+        { "answer": "Captain Marvel", "isCorrect": false },
+        { "answer": "Avengers: Endgame", "isCorrect": false },
+        { "answer": "Black Widow", "isCorrect": true },
+        { "answer": "Iron Man 2", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Who portrayed the character of Natasha Romanoff, also known as Black Widow?",
+      "possibleAnswers": [
+        { "answer": "Brie Larson", "isCorrect": false },
+        { "answer": "Tessa Thompson", "isCorrect": false },
+        { "answer": "Scarlett Johansson", "isCorrect": true },
+        { "answer": "Danai Gurira", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the name of the Disney+ series that provided a deeper exploration of Scarlet Witch's character?",
+      "possibleAnswers": [
+        { "answer": "Falcon and The Winter Soldier", "isCorrect": false },
+        { "answer": "Loki", "isCorrect": false },
+        { "answer": "WandaVision", "isCorrect": true },
+        { "answer": "Hawkeye", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which female hero's powers bring a cosmic and intergalactic dimension to the MCU?",
+      "possibleAnswers": [
+        { "answer": "Valkyrie", "isCorrect": false },
+        { "answer": "Okoye", "isCorrect": false },
+        { "answer": "Wanda Maximoff", "isCorrect": false },
+        { "answer": "Captain Marvel", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "In which film did Black Widow make the ultimate sacrifice during the events of \"Avengers: Endgame\"?",
+      "possibleAnswers": [
+        { "answer": "Avengers: Infinity War", "isCorrect": false },
+        { "answer": "Avengers: Age of Ultron", "isCorrect": false },
+        { "answer": "Captain America: Civil War", "isCorrect": false },
+        { "answer": "Avengers: Endgame", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Who played the role of Carol Danvers, aka Captain Marvel?",
+      "possibleAnswers": [
+        { "answer": "Scarlett Johansson", "isCorrect": false },
+        { "answer": "Brie Larson", "isCorrect": true },
+        { "answer": "Evangeline Lilly", "isCorrect": false },
+        { "answer": "Elizabeth Olsen", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In the MCU, who is known for being the former spy and skilled fighter?",
+      "possibleAnswers": [
+        { "answer": "Wanda Maximoff", "isCorrect": false },
+        { "answer": "Valkyrie", "isCorrect": false },
+        { "answer": "Black Widow", "isCorrect": true },
+        { "answer": "Okoye", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How does the Disney+ series \"WandaVision\" contribute to a deeper exploration of Wanda Maximoff's character?",
+      "possibleAnswers": [
+        "This is an open question, there are no options to choose from. Write your own answer and submit."
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Discuss the significance of the representation of female heroes in the Marvel Cinematic Universe and its impact on audiences.",
+      "possibleAnswers": [
+        "This is an open question, there are no options to choose from. Write your own answer and submit."
+      ]
+    }
+  ]
+}
