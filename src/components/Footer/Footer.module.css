@@ -1,0 +1,22 @@
+footer {
+  height: 3rem;
+  background-color: #e4d7cb;
+  color: #694736;
+  padding: 1.5rem 0;
+}
+
+.footerItems {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10rem;
+  align-items: center;
+}
+
+.copyrights {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.socials svg {
+  color: #694736;
+}
