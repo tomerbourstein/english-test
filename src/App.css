@@ -12,5 +12,11 @@ main {
   text-align: left;
   margin: 2rem 4rem;
   display: flex;
-  
+  gap: 5%;
+}
+ol {
+  padding-left: 1rem;
+}
+h1 {
+  width: 30rem;
 }
