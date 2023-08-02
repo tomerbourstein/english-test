@@ -4,3 +4,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.timerAndMap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
