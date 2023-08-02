@@ -3,3 +3,7 @@
   background-color: #e4cbcb;
   height: 3rem;
 }
+
+.header .MuiOutlinedInput-root {
+  width: 75% !important;
+}

@@ -67,6 +67,8 @@ const Questions = () => {
                   label="Place your answer here"
                   variant="filled"
                   fullWidth
+                  multiline
+                  maxRows={4}
                 />
               )
             )}
