@@ -1,7 +1,10 @@
 .header {
-  /* #e4cbcb */
   background-color: #e4cbcb;
-  height: 3rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
 }
 
 .header .MuiOutlinedInput-root {

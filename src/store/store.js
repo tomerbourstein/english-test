@@ -3,7 +3,7 @@ import thunkMiddleware from "redux-thunk";
 import chatSlice from "./chatSlice";
 
 const store = configureStore({
-  reducer: { chatSlice },
+  reducer: { chat: chatSlice.reducer },
   middleware: [thunkMiddleware],
 });
 
