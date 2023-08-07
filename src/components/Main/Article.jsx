@@ -1,15 +1,16 @@
-import DATA from "../../../article.json";
-const Article = () => {
-  const { article, questions } = DATA;
+const Article = (props) => {
+  const { validArticle } = props;
+
   const listOfPar = [];
 
-  let split = article.content.split("\n\n");
+  let split = validArticle.content.split("\n\n");
   split.forEach(function (item) {
     listOfPar.push(item);
   });
+
   return (
     <div>
-      <h1>{article.title}</h1>
+      <h1>{validArticle.title}</h1>
       {listOfPar.map((par, i) => (
         <p key={i}>{par}</p>
       ))}

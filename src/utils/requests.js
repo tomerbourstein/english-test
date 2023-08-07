@@ -4,12 +4,12 @@ import { systemPrompt, userPrompt } from "../utils/prompts.js";
 // import "dotenv/config";
 
 // const apiUrl = "https://api.openai.com/v1/chat/completions";
-// const organization = "org-uPYB1wDSz4hcln91Znt6prFC";
+const organization = "org-uPYB1wDSz4hcln91Znt6prFC";
 // const apiKey = VITE_OPENAI_API_KEY;
-const apiKey = "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";
+const apiKey = "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";
 
 const configuration = new Configuration({
-  // organization,
+  organization,
   apiKey,
 });
 delete configuration.baseOptions.headers["User-Agent"];
