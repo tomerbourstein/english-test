@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 
 import Article from "./Article";
-import classes from "./MainCard.module.css";
 import Questions from "./Questions";
+import Loading from "../UI/Loading";
+
+import classes from "./MainCard.module.css";
 const MainCard = () => {
   const validArticle = useSelector((state) => state.chat.resultText);
   const isLoading = useSelector((state) => state.chat.isLoading);
@@ -16,6 +18,7 @@ const MainCard = () => {
           <Questions validQuestions = {validArticle.questions}/>
         </>
       )}
+      {isLoading && <Loading />}
     </div>
   );
 };
