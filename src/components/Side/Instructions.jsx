@@ -1,6 +1,8 @@
+import classes from "./Instructions.module.css";
+
 const Instructions = () => {
   return (
-    <div>
+    <div className={classes.instructions}>
       <h2>INSTRUCTIONS</h2>
       <ol>
         <li>Read The Article</li>

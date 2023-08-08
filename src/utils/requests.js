@@ -5,9 +5,7 @@ import { systemPrompt, userPrompt } from "../utils/prompts.js";
 
 // const apiUrl = "https://api.openai.com/v1/chat/completions";
 const organization = "org-uPYB1wDSz4hcln91Znt6prFC";
-// const apiKey = VITE_OPENAI_API_KEY;
-const apiKey = "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";
-
+const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 const configuration = new Configuration({
   organization,
   apiKey,
@@ -36,6 +34,7 @@ export const fetchChatCompletion = createAsyncThunk(
       });
 
       const resultText = JSON.parse(result.data.choices[0].message.content);
+      console.log(resultText);
       return resultText;
     } catch (error) {
       console.error("Error during API request:", error);

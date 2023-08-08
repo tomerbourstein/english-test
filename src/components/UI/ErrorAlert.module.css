@@ -9,3 +9,9 @@
   margin: 1.5rem 0;
   border-radius: 6px;
 }
+
+.alertTitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

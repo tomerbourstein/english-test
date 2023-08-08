@@ -1,4 +1,8 @@
 export const systemPrompt = (category) => {
+  if (category === "" || category === null) {
+    category = "for you to choose";
+  }
+  console.log(category);
   return `The category is ${category}, choose a random subject from the category and create an unseen article, make it 2 paragraph long.
     Insert \n\n when needed for a new paragraph in the article.
     Based on the article you just created, create a quiz of 4 multipliy choice questions, that has 4 possible answers with only one is correct. 
