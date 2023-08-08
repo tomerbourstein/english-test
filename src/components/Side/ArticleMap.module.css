@@ -1,5 +1,26 @@
 .map {
   height: 18rem;
   overflow-y: scroll;
-  margin-bottom: 3rem;
+  margin: 1rem 0;
+  padding-right: 5px;
+}
+
+.map p {
+  margin: 0 0 2rem 0;
+}
+.map::-webkit-scrollbar {
+  width: 8px;
+}
+
+.map::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.map::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #d55959;
 }

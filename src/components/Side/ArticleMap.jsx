@@ -1,8 +1,10 @@
-import DATA from "../../../article.json";
+// import DATA from "../../../article.json";
 
 import classes from "./ArticleMap.module.css";
-const ArticleMap = () => {
-  const { article, questions } = DATA;
+const ArticleMap = (props) => {
+  const { article } = props;
+
+  // const { article, questions } = DATA;
   const listOfPar = [];
 
   let split = article.content.split("\n\n");

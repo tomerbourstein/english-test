@@ -12,7 +12,7 @@ const SideCard = () => {
       <Instructions />
       <div className={classes.timerAndMap}>
         <Timer />
-        {validArticle && <ArticleMap />}
+        {validArticle && <ArticleMap article={validArticle.article} />}
       </div>
     </div>
   );

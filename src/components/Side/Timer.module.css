@@ -1,15 +1,15 @@
 .outerCircle {
-  width: 140px;
-  line-height: 120px;
+  width: 90px;
+  line-height: 80px;
   border-radius: 50%;
   text-align: center;
-  font-size: 32px;
-  border: 10px solid #fff;
-  outline: 5px solid #424242;
+  font-size: 20px;
+  border: 5px solid #fff;
+  outline: 3px solid #424242;
 }
 
 .innerCircle {
   border-radius: 50%;
   outline: 3px solid rgb(199, 5, 5);
-  border: 10px solid red;
+  border: 5px solid red;
 }
