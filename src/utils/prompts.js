@@ -18,8 +18,9 @@ export const systemPrompt = (category) => {
 };
 
 export const userPrompt = () => {
-  return `display all the data to a json. this is the format:
-the correct answer for each multi choice question's "isCorrect" should be true, all the rest of the possible answers should be false.
+  return `the correct answer for each multi choice question's "isCorrect" should be true, all the rest of the possible answers should be false.
+  display all the data to a json. this is the only format that you should return:
+
 
 {
   "article": {
