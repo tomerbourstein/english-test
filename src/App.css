@@ -9,10 +9,7 @@ html,
 }
 
 main {
-  text-align: left;
-  margin: 2rem 4rem;
-  display: flex;
-  gap: 5%;
+  margin: 4rem;
 }
 
 ol {

@@ -9,8 +9,11 @@ const Instructions = () => {
         following instructions{" "}
       </h3>
       <p>Read The entire article before answering all questions</p>
+      <p>The answers to the questions are provided in the text</p>
       <p>Submit your answers and correct your mistakes</p>
-      <p className={classes.startAction}>When you're ready, fill in the preferred subject and click GO</p>
+      <p className={classes.startAction}>
+        When you're ready, fill in the preferred subject and click GO
+      </p>
 
       <Form />
     </div>

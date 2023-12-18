@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -20,6 +20,7 @@ import classes from "./Questions.module.css";
 const Questions = (props) => {
   const { validQuestions } = props;
 
+  const [responses, setResponses] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const theme = useTheme();
   const maxSteps = validQuestions.length;
@@ -30,6 +31,50 @@ const Questions = (props) => {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleRadioChange = (event) => {
+    const selectedAnswer = event.target.value;
+    updateResponses(selectedAnswer);
+  };
+
+  const handleTextChange = (event) => {
+    const textInputValue = event.target.value;
+    updateResponses(textInputValue);
+  };
+
+  const updateResponses = (response) => {
+    const questionId = validQuestions[activeStep].id;
+    const existingResponseIndex = responses.findIndex(
+      (item) => item && item.questionId === questionId
+    );
+
+    if (existingResponseIndex !== -1) {
+      // If the question already has a response, update the existing entry
+      const updatedResponses = [...responses];
+      updatedResponses[existingResponseIndex] = {
+        questionId,
+        question: validQuestions[activeStep].question,
+        chosenAnswer: response,
+      };
+      setResponses(updatedResponses);
+    } else {
+      // If the question doesn't have a response, create a new entry
+      const updatedResponses = [
+        ...responses,
+        {
+          questionId,
+          question: validQuestions[activeStep].question,
+          chosenAnswer: response,
+        },
+      ];
+      setResponses(updatedResponses);
+    }
+  };
+
+  const handleSubmit = () => {
+    console.log(responses);
+    // You can store or handle the array of responses as needed.
   };
 
   return (
@@ -54,6 +99,7 @@ const Questions = (props) => {
                 <FormControlLabel
                   key={i}
                   value={el.answer}
+                  onChange={handleRadioChange}
                   control={<Radio />}
                   label={el.answer}
                 />
@@ -66,6 +112,7 @@ const Questions = (props) => {
                   fullWidth
                   multiline
                   maxRows={4}
+                  onChange={handleTextChange}
                 />
               )
             )}
@@ -110,6 +157,7 @@ const Questions = (props) => {
           className={classes.submitExamButton}
           variant="contained"
           position="static"
+          onClick={handleSubmit}
         >
           Submit Exam's Answers
         </Button>

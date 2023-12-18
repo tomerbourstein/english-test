@@ -12,25 +12,27 @@ const MainCard = () => {
   const isLoading = useSelector((state) => state.chat.isLoading);
   const error = useSelector((state) => state.chat.error);
   return (
-    <div className={classes.mainCard}>
+    <div>
       <div className={classes.notAnArticle}>
         {isLoading && <Loading />}
         {error && <ErrorAlert err={error} />}
       </div>
 
-      {DUMMY_DATA && (
+      <div className={classes.mainCard}>
+        {/* {DUMMY_DATA && (
+          <>
+            <Article validArticle={DUMMY_DATA.article} />
+            <Questions validQuestions={DUMMY_DATA.questions} />
+          </>
+        )} */}
+
+        {validArticle && (
         <>
-          <Article validArticle={DUMMY_DATA.article} />
-          <Questions validQuestions={DUMMY_DATA.questions} />
+        <Article validArticle={validArticle.article} />
+        <Questions validQuestions={validArticle.questions} />
         </>
       )}
-
-      {/* {validArticle && (
-        <>
-          <Article validArticle={validArticle.article} />
-          <Questions validQuestions={validArticle.questions} />
-        </>
-      )} */}
+      </div>
     </div>
   );
 };
