@@ -1,0 +1,14 @@
+.instructions {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 102px;   
+}
+
+p {
+  margin: 0.2rem;
+}
+.startAction {
+  margin-top: 2rem;
+}

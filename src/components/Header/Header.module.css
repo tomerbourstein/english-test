@@ -1,12 +1,10 @@
 .header {
-  background-color: #e4cbcb;
-  height: 5rem;
+  background-color: #fffafa;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 4rem;
-}
-
-.header .MuiOutlinedInput-root {
-  width: 75% !important;
+  justify-content: center;
+  gap: 10rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }

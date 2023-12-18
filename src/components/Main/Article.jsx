@@ -1,3 +1,4 @@
+import classes from "./Article.module.css";
 const Article = (props) => {
   const { validArticle } = props;
 
@@ -9,7 +10,7 @@ const Article = (props) => {
   });
 
   return (
-    <div>
+    <div className={classes.article}>
       <h1>{validArticle.title}</h1>
       {listOfPar.map((par, i) => (
         <p key={i}>{par}</p>

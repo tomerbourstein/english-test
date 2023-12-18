@@ -4,17 +4,17 @@ import Footer from "./components/Footer/Footer";
 import MainCard from "./components/Main/MainCard.jsx";
 import SideCard from "./components/Side/SideCard";
 
-import Divider from "@mui/material/Divider";
+import Instructions from "./components/Main/Instructions.jsx";
 
 function App() {
   return (
     <>
       <Header />
+      <Instructions />
       <main>
         <MainCard />
-        <Divider orientation="vertical" flexItem />
 
-        <SideCard />
+        {/* <SideCard /> */}
       </main>
       <Footer />
     </>

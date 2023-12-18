@@ -1,6 +1,15 @@
 .mainCard {
-  width: 70%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 5rem;
+}
+
+.notAnArticle {
+  width: 60%;
+  margin: auto;
+}
+
+.notAnArticle:empty {
+  display: none;
 }
