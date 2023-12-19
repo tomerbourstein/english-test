@@ -5,12 +5,21 @@ const initialState = {
   resultText: null,
   isLoading: false,
   error: null,
+  category: "",
+  isArticle: false,
 };
 
 const chatSlice = createSlice({
   name: "chat",
   initialState,
-  reducers: {},
+  reducers: {
+    saveCategory(state, action) {
+      state.category = action.payload;
+    },
+    toggleDisplayArticle(state, action) {
+      state.isArticle = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchChatCompletion.pending, (state) => {

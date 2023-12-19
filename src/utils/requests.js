@@ -1,38 +1,54 @@
 import OpenAI from "openai";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { systemPrompt, userPrompt } from "../utils/prompts.js";
-
-// const chatSubject = "What is the weather in Tel-Aviv in celsius?";
-// const chatContent = "Tell me how to dress out in this weather.";
+import {
+  systemPrompt,
+  userPrompt,
+  userAnswersPrompt,
+} from "../utils/prompts.js";
 
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 const openai = new OpenAI({
-  apiKey: apiKey, // This is also the default, can be omitted
+  apiKey: apiKey,
   dangerouslyAllowBrowser: true,
 });
 
+const messagesWithUserAnswers = [];
 export const fetchChatCompletion = createAsyncThunk(
   "chat/fetchChatCompletion",
-  async (category) => {
+  async ({ enteredCategory, testAnswers }) => {
+    const messagesInitial = [
+      {
+        role: "system",
+        content: String(systemPrompt),
+      },
+      {
+        role: "user",
+        content: String(userPrompt(enteredCategory)),
+      },
+    ];
+    messagesWithUserAnswers.push(...messagesInitial);
+
+    if (testAnswers) {
+      messagesWithUserAnswers.push(
+        {
+          role: "user",
+          content: String(userAnswersPrompt),
+        },
+        { role: "user", content: JSON.stringify(testAnswers) }
+      );
+    }
+
     try {
       const result = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "system",
-            content: String(userPrompt),
-          },
-          {
-            role: "user",
-            content: String(systemPrompt(category)),
-          },
-        ],
+        messages: testAnswers ? messagesWithUserAnswers : messagesInitial,
         temperature: 0.5,
-        max_tokens: 3535,
+        // max_tokens: 3535,
       });
+
       const resultText = result.choices[0].message.content;
-      // console.log(resultText);
-      // console.log(JSON.parse(resultText));
+      messagesWithUserAnswers.push({ role: "assistant", content: resultText });
+
       return JSON.parse(resultText);
     } catch (error) {
       if (error instanceof OpenAI.APIError) {

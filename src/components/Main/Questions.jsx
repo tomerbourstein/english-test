@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { fetchChatCompletion } from "../../utils/requests";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -16,12 +17,14 @@ import CardContent from "@mui/material/CardContent";
 import Divider from "@mui/material/Divider";
 
 import classes from "./Questions.module.css";
+import { chatActions } from "../../store/chatSlice";
 
 const Questions = (props) => {
-  const { validQuestions } = props;
-
   const [responses, setResponses] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
+  const category = useSelector((state) => state.chat.category);
+  const { validQuestions } = props;
+  const dispatch = useDispatch();
   const theme = useTheme();
   const maxSteps = validQuestions.length;
 
@@ -72,9 +75,14 @@ const Questions = (props) => {
     }
   };
 
-  const handleSubmit = () => {
-    console.log(responses);
-    // You can store or handle the array of responses as needed.
+  const handleSubmitTest = () => {
+    dispatch(chatActions.toggleDisplayArticle(false));
+    dispatch(
+      fetchChatCompletion({
+        enteredCategory: category,
+        testAnswers: responses,
+      })
+    );
   };
 
   return (
@@ -157,7 +165,7 @@ const Questions = (props) => {
           className={classes.submitExamButton}
           variant="contained"
           position="static"
-          onClick={handleSubmit}
+          onClick={handleSubmitTest}
         >
           Submit Exam's Answers
         </Button>

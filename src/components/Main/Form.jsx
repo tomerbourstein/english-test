@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { fetchChatCompletion } from "../../utils/requests";
+import { chatActions } from "../../store/chatSlice";
 import useInput from "../../hooks/use-input";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
@@ -20,8 +21,14 @@ const Form = () => {
 
   const handleSubmitCategory = (event) => {
     event.preventDefault();
-    // Dispatch the thunk function to trigger the API call
-    dispatch(fetchChatCompletion(enteredCategory));
+    dispatch(chatActions.saveCategory(enteredCategory));
+    dispatch(chatActions.toggleDisplayArticle(true));
+    dispatch(
+      fetchChatCompletion({
+        enteredCategory: enteredCategory,
+        testAnswers: null,
+      })
+    );
     categoryResetHandler("");
   };
   return (

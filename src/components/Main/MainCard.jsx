@@ -11,6 +11,8 @@ const MainCard = () => {
   const validArticle = useSelector((state) => state.chat.resultText);
   const isLoading = useSelector((state) => state.chat.isLoading);
   const error = useSelector((state) => state.chat.error);
+  const isArticle = useSelector((state) => state.chat.isArticle);
+
   return (
     <div>
       <div className={classes.notAnArticle}>
@@ -26,12 +28,12 @@ const MainCard = () => {
           </>
         )} */}
 
-        {validArticle && (
-        <>
-        <Article validArticle={validArticle.article} />
-        <Questions validQuestions={validArticle.questions} />
-        </>
-      )}
+        {isArticle && validArticle && (
+          <>
+            <Article validArticle={validArticle.article} />
+            <Questions validQuestions={validArticle.questions} />
+          </>
+        )}
       </div>
     </div>
   );
