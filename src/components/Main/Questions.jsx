@@ -1,78 +1,59 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchChatCompletion } from "../../utils/requests";
 import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MobileStepper from "@mui/material/MobileStepper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import TextField from "@mui/material/TextField";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Divider from "@mui/material/Divider";
-
-import classes from "./Questions.module.css";
+import {
+  Box,
+  Card,
+  CardContent,
+  Divider,
+  MobileStepper,
+  Typography,
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  TextField,
+} from "@mui/material";
+import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { chatActions } from "../../store/chatSlice";
+import classes from "./Questions.module.css";
 
-const Questions = (props) => {
+const Questions = ({ validQuestions, result }) => {
   const [responses, setResponses] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const category = useSelector((state) => state.chat.category);
-  const { validQuestions } = props;
   const dispatch = useDispatch();
   const theme = useTheme();
   const maxSteps = validQuestions.length;
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handleStepChange = (step) => {
+    setActiveStep(step);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleRadioChange = (event) => {
-    const selectedAnswer = event.target.value;
-    updateResponses(selectedAnswer);
-  };
-
-  const handleTextChange = (event) => {
-    const textInputValue = event.target.value;
-    updateResponses(textInputValue);
-  };
-
-  const updateResponses = (response) => {
+  const handleResponseChange = (response) => {
     const questionId = validQuestions[activeStep].id;
     const existingResponseIndex = responses.findIndex(
       (item) => item && item.questionId === questionId
     );
 
-    if (existingResponseIndex !== -1) {
-      // If the question already has a response, update the existing entry
-      const updatedResponses = [...responses];
-      updatedResponses[existingResponseIndex] = {
-        questionId,
-        question: validQuestions[activeStep].question,
-        chosenAnswer: response,
-      };
-      setResponses(updatedResponses);
-    } else {
-      // If the question doesn't have a response, create a new entry
-      const updatedResponses = [
-        ...responses,
-        {
-          questionId,
-          question: validQuestions[activeStep].question,
-          chosenAnswer: response,
-        },
-      ];
-      setResponses(updatedResponses);
-    }
+    const updatedResponses =
+      existingResponseIndex !== -1
+        ? responses.map((item, index) =>
+            index === existingResponseIndex
+              ? { ...item, chosenAnswer: response }
+              : item
+          )
+        : [
+            ...responses,
+            {
+              questionId,
+              question: validQuestions[activeStep].question,
+              chosenAnswer: response,
+            },
+          ];
+
+    setResponses(updatedResponses);
   };
 
   const handleSubmitTest = () => {
@@ -96,35 +77,44 @@ const Questions = (props) => {
         <Divider variant="middle" sx={{ m: 4 }} />
         <Box
           className={classes.questionsBox}
-          sx={{ minHeight: 170, width: "100%" }}
+          sx={{ minHeight: !result ? 170 : 0, width: "100%" }}
         >
-          <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            name="radio-buttons-group"
-          >
-            {validQuestions[activeStep].possibleAnswers.map((el, i) =>
-              validQuestions[activeStep].possibleAnswers.length > 1 ? (
-                <FormControlLabel
-                  key={i}
-                  value={el.answer}
-                  onChange={handleRadioChange}
-                  control={<Radio />}
-                  label={el.answer}
-                />
-              ) : (
-                <TextField
-                  key={i}
-                  id="filled-basic"
-                  label="Place your answer here"
-                  variant="filled"
-                  fullWidth
-                  multiline
-                  maxRows={4}
-                  onChange={handleTextChange}
-                />
-              )
-            )}
-          </RadioGroup>
+          {!result && (
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              name="radio-buttons-group"
+            >
+              {validQuestions[activeStep].possibleAnswers.map((el, i) =>
+                validQuestions[activeStep].possibleAnswers.length > 1 ? (
+                  <FormControlLabel
+                    key={i}
+                    value={el.answer}
+                    onChange={(e) => handleResponseChange(e.target.value)}
+                    control={<Radio />}
+                    label={el.answer}
+                    disabled={!result}
+                  />
+                ) : (
+                  <TextField
+                    key={i}
+                    id="filled-basic"
+                    label="Place your answer here"
+                    variant="filled"
+                    fullWidth
+                    multiline
+                    maxRows={4}
+                    onChange={(e) => handleResponseChange(e.target.value)}
+                  />
+                )
+              )}
+            </RadioGroup>
+          )}
+
+          {result && (
+            <Typography sx={{ textAlign: "left" }}>
+              {validQuestions[activeStep].correctAnswer}
+            </Typography>
+          )}
         </Box>
         <MobileStepper
           className={classes.stepperButtons}
@@ -135,7 +125,7 @@ const Questions = (props) => {
           nextButton={
             <Button
               size="small"
-              onClick={handleNext}
+              onClick={() => handleStepChange(activeStep + 1)}
               disabled={activeStep === maxSteps - 1}
             >
               Next
@@ -149,7 +139,7 @@ const Questions = (props) => {
           backButton={
             <Button
               size="small"
-              onClick={handleBack}
+              onClick={() => handleStepChange(activeStep - 1)}
               disabled={activeStep === 0}
             >
               {theme.direction === "rtl" ? (
@@ -161,14 +151,17 @@ const Questions = (props) => {
             </Button>
           }
         />
-        <Button
-          className={classes.submitExamButton}
-          variant="contained"
-          position="static"
-          onClick={handleSubmitTest}
-        >
-          Submit Exam's Answers
-        </Button>
+
+        {!result && (
+          <Button
+            className={classes.submitExamButton}
+            variant="contained"
+            position="static"
+            onClick={handleSubmitTest}
+          >
+            Submit Exam's Answers
+          </Button>
+        )}
       </CardContent>
     </Card>
   );

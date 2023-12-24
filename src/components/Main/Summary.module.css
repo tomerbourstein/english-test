@@ -1,0 +1,15 @@
+@import url("https://fonts.cdnfonts.com/css/a-amanah-guru");
+
+.summary {
+  text-align: center;
+}
+
+.numericAndVerbal {
+  font-family: "a Amanah Guru", sans-serif;
+  font-size: 3rem;
+  color: #ec2863;
+}
+
+.numericAndVerbal > * {
+  margin: 1rem;
+}

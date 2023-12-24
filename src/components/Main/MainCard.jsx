@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 import Article from "./Article";
 import Questions from "./Questions";
+import Summary from "./Summary";
 import Loading from "../UI/Loading";
 import ErrorAlert from "../UI/ErrorAlert";
 import classes from "./MainCard.module.css";
@@ -33,6 +34,9 @@ const MainCard = () => {
             <Article validArticle={validArticle.article} />
             <Questions validQuestions={validArticle.questions} />
           </>
+        )}
+        {validArticle && validArticle.result && (
+          <Summary validQuestions={validArticle} />
         )}
       </div>
     </div>

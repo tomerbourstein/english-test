@@ -13,8 +13,6 @@ function App() {
       <Instructions />
       <main>
         <MainCard />
-
-        {/* <SideCard /> */}
       </main>
       <Footer />
     </>
