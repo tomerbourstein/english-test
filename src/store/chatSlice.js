@@ -7,6 +7,7 @@ const initialState = {
   error: null,
   category: "",
   isArticle: false,
+  timeOver: false,
 };
 
 const chatSlice = createSlice({
@@ -18,6 +19,9 @@ const chatSlice = createSlice({
     },
     toggleDisplayArticle(state, action) {
       state.isArticle = action.payload;
+    },
+    endOfQuiz(state) {
+      state.timeOver = true;
     },
   },
   extraReducers: (builder) => {

@@ -9,7 +9,8 @@ html,
 }
 
 main {
-  margin: 4rem;
+  padding: 7rem 0 3rem;
+  margin: 0 4rem;
 }
 
 ol {

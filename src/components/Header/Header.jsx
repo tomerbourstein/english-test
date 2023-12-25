@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <Typography>AI Tutor</Typography>
+
       <Timer />
     </header>
   );

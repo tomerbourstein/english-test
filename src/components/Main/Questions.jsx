@@ -58,6 +58,7 @@ const Questions = ({ validQuestions, result }) => {
 
   const handleSubmitTest = () => {
     dispatch(chatActions.toggleDisplayArticle(false));
+    dispatch(chatActions.endOfQuiz());
     dispatch(
       fetchChatCompletion({
         enteredCategory: category,

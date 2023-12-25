@@ -4,10 +4,8 @@ import classes from "./Instructions.module.css";
 const Instructions = () => {
   return (
     <div className={classes.instructions}>
-      <h3>
-        Welcome to your AI English Tutor, before you begin please read the
-        following instructions{" "}
-      </h3>
+      <h2>Welcome to your AI English Tutor,</h2>
+      <h3>before you begin please read the following instructions </h3>
       <p>Read The entire article before answering all questions</p>
       <p>The answers to the questions are provided in the text</p>
       <p>Submit your answers and correct your mistakes</p>
