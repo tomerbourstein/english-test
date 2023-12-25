@@ -1,9 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
 .instructions {
   width: 60%;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  padding-top: 2rem;   
+  /* margin: auto; */
+  padding-top: 2rem;
+}
+
+.crop {
+  width: 20rem;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+.crop img {
+  width: 40rem;
+  margin: 0 -400px;
 }
 
 p {

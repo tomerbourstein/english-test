@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { chatActions } from "../../store/chatSlice";
+import { fetchChatCompletion } from "../../utils/requests";
 import classes from "./Timer.module.css";
 
 const Timer = () => {
   const [timerSeconds, setTimerSeconds] = useState(59);
   const [timerMinutes, setTimerMinutes] = useState(19);
+  const category = useSelector((state) => state.chat.category);
+  const responses = useSelector((state) => state.chat.quizResponses);
+  const dispatch = useDispatch();
   const startTime = Date.now();
 
   const timePassedInSeconds = (startTime) => {
@@ -19,7 +24,22 @@ const Timer = () => {
     return countdown();
   };
 
+  const handleSubmitTest = () => {
+    dispatch(chatActions.toggleDisplayArticle(false));
+    dispatch(chatActions.endOfQuiz());
+    dispatch(
+      fetchChatCompletion({
+        enteredCategory: category,
+        testAnswers: responses,
+      })
+    );
+  };
+
   useEffect(() => {
+    if (timerMinutes < 19) {
+      handleSubmitTest();
+    }
+
     const timerInterval = setInterval(() => {
       setTimerSeconds(timePassedInSeconds(startTime));
     }, timePassedInSeconds());
@@ -28,6 +48,7 @@ const Timer = () => {
       clearInterval(timerInterval);
     };
   }, [timerMinutes]);
+
   return (
     <div className={classes.countdown}>
       <div className={classes.cdBox}>

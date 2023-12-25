@@ -20,9 +20,9 @@ import { chatActions } from "../../store/chatSlice";
 import classes from "./Questions.module.css";
 
 const Questions = ({ validQuestions, result }) => {
-  const [responses, setResponses] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const category = useSelector((state) => state.chat.category);
+  const responses = useSelector((state) => state.chat.quizResponses);
   const dispatch = useDispatch();
   const theme = useTheme();
   const maxSteps = validQuestions.length;
@@ -53,7 +53,7 @@ const Questions = ({ validQuestions, result }) => {
             },
           ];
 
-    setResponses(updatedResponses);
+    dispatch(chatActions.saveQuizResponses(updatedResponses));
   };
 
   const handleSubmitTest = () => {
@@ -75,10 +75,10 @@ const Questions = ({ validQuestions, result }) => {
             {validQuestions[activeStep].question}
           </Typography>
         </Box>
-        <Divider variant="middle" sx={{ m: 4 }} />
+        <Divider variant="middle" sx={{ m: 2 }} />
         <Box
           className={classes.questionsBox}
-          sx={{ minHeight: !result ? 170 : 0, width: "100%" }}
+          sx={{ minHeight: !result ? 140 : 0, width: "100%" }}
         >
           {!result && (
             <RadioGroup
@@ -93,7 +93,6 @@ const Questions = ({ validQuestions, result }) => {
                     onChange={(e) => handleResponseChange(e.target.value)}
                     control={<Radio />}
                     label={el.answer}
-                    disabled={!result}
                   />
                 ) : (
                   <TextField
@@ -154,14 +153,15 @@ const Questions = ({ validQuestions, result }) => {
         />
 
         {!result && (
-          <Button
-            className={classes.submitExamButton}
-            variant="contained"
-            position="static"
-            onClick={handleSubmitTest}
-          >
-            Submit Exam's Answers
-          </Button>
+          <div className={classes.submitExamButton}>
+            <Button
+              variant="contained"
+              position="static"
+              onClick={handleSubmitTest}
+            >
+              Submit Exam's Answers
+            </Button>
+          </div>
         )}
       </CardContent>
     </Card>

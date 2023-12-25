@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   error: null,
   category: "",
+  quizResponses: [],
   isArticle: false,
   timeOver: false,
 };
@@ -17,11 +18,17 @@ const chatSlice = createSlice({
     saveCategory(state, action) {
       state.category = action.payload;
     },
+    saveQuizResponses(state, action) {
+      state.quizResponses = action.payload;
+    },
     toggleDisplayArticle(state, action) {
       state.isArticle = action.payload;
     },
     endOfQuiz(state) {
       state.timeOver = true;
+    },
+    toggleLoadingScreen(state, action) {
+      state.isLoading = action.payload;
     },
   },
   extraReducers: (builder) => {

@@ -18,13 +18,6 @@ const MainCard = () => {
       </div>
 
       <div className={classes.mainCard}>
-        {/* {DUMMY_DATA && (
-          <>
-            <Article validArticle={DUMMY_DATA.article} />
-            <Questions validQuestions={DUMMY_DATA.questions} />
-          </>
-        )} */}
-
         <Article validArticle={validArticle.article} />
         <Questions validQuestions={validArticle.questions} />
       </div>

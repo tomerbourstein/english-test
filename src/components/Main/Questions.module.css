@@ -1,4 +1,8 @@
 .questionsBox {
-  text-align: center;
   width: 40%;
+}
+
+.submitExamButton {
+display: flex;
+justify-content: center;
 }

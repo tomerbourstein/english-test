@@ -20,7 +20,7 @@ function App() {
       {isArticle && validArticle && <Header />}
       {!isArticle && !isLoading && !timeOver && <Instructions />}
       {isArticle && validArticle && <MainCard />}
-      {timeOver && validArticle && validArticle.result && (
+      {!isLoading && timeOver && validArticle && validArticle.result && (
         <Summary validQuestions={validArticle} />
       )}
       {isArticle && validArticle && <Footer />}
