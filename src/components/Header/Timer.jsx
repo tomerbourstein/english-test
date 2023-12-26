@@ -36,7 +36,7 @@ const Timer = () => {
   };
 
   useEffect(() => {
-    if (timerMinutes < 19) {
+    if (timerMinutes < 0) {
       handleSubmitTest();
     }
 

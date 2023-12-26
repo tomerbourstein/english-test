@@ -1,16 +1,52 @@
 @import url("https://fonts.cdnfonts.com/css/a-amanah-guru");
 
-.summary {
-  width: 40%;
-  margin: auto;
+.container {
+  display: flex;
 }
 
+.summary {
+  width: 40%;
+}
+
+.summary ::-moz-selection {
+  background: #d80032;
+  color: #f4f3f2;
+}
+
+.summary ::selection {
+  background: #d80032;
+  color: #f4f3f2;
+}
+.startOver button {
+  width: 100%;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+.startOver button:hover {
+  color: #f4f3f2;
+  background-color: rgba(30, 30, 30, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
 .numericAndVerbal {
   font-family: "a Amanah Guru", sans-serif;
   font-size: 3rem;
-  color: #ec2863;
+}
+.numericAndVerbal > h2,
+.numericAndVerbal > p {
+  color: #d80032;
 }
 
 .numericAndVerbal > * {
   margin: 1rem;
+}
+
+.crop > img {
+  width: 30rem;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

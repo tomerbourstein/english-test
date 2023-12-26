@@ -23,7 +23,7 @@ function App() {
       {!isLoading && timeOver && validArticle && validArticle.result && (
         <Summary validQuestions={validArticle} />
       )}
-      {isArticle && validArticle && <Footer />}
+      {!isLoading  && validArticle && <Footer />}
     </>
   );
 }

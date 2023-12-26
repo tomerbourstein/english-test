@@ -68,7 +68,7 @@ const Questions = ({ validQuestions, result }) => {
   };
 
   return (
-    <Card className={classes.questionsBox} sx={{ width: "100%", flexGrow: 1 }}>
+    <Card className={classes.questionsBox} sx={{ width: "100%", maxHeight:350, flexGrow: 1 }}>
       <CardContent>
         <Box sx={{ display: "flex", textAlign: "left" }}>
           <Typography component="h3" sx={{ height: "100%" }}>
@@ -91,7 +91,16 @@ const Questions = ({ validQuestions, result }) => {
                     key={i}
                     value={el.answer}
                     onChange={(e) => handleResponseChange(e.target.value)}
-                    control={<Radio />}
+                    control={
+                      <Radio
+                        sx={{
+                          color: "rgba(0, 0, 0, 0.6)",
+                          "&.Mui-checked": {
+                            color: "#11CBD7",
+                          },
+                        }}
+                      />
+                    }
                     label={el.answer}
                   />
                 ) : (

@@ -1,25 +1,33 @@
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 2rem;
 }
 
 .instructions {
-  width: 60%;
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
   padding-top: 2rem;
 }
 
 .crop {
-  width: 20rem;
+  width: 15rem;
   overflow: hidden;
   padding-top: 2rem;
 }
 
 .crop img {
-  width: 40rem;
-  margin: 0 -400px;
+  width: 35rem;
+  margin: 0 -250px;
+  mix-blend-mode: multiply;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 p {

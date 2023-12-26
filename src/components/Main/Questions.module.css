@@ -3,6 +3,15 @@
 }
 
 .submitExamButton {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.submitExamButton button {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.submitExamButton button:hover {
+  background-color: #0ea7b2
 }

@@ -1,3 +1,14 @@
+/* buttons: #11CBD7 */
+/* footer : rgba(0, 0, 0, 0.8) */
+/* background : #f4f3f2  */
+/* header : #C6F1E7  */
+/* text :   color: rgba(0, 0, 0, 0.87) */
+/* summary text : #D80032  */
+/* High-emphasis text has an opacity of 87% */
+/* Medium-emphasis text and hint text have opacities of 60% */
+/* Disabled text has an opacity of 38% */
+/* ::selection : #C6F1E7  */
+
 body,
 html,
 #root {
@@ -6,6 +17,18 @@ html,
   margin: 0;
   text-align: center;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* background-color: #f4f3f2; */
+  background-color: #f4f3f2;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+::-moz-selection {
+  background: #c6f1e7;
+}
+
+::selection {
+  background: #c6f1e7;
 }
 
 main {
@@ -16,6 +39,7 @@ main {
 ol {
   padding-left: 1rem;
 }
+
 h1 {
   width: 30rem;
 }
@@ -28,4 +52,14 @@ h1 {
 input {
   width: 10rem !important;
   overflow: hidden;
+}
+
+p,
+h4 {
+  color: rgba(0, 0, 0, 0.6);
+}
+h1,
+h2,
+h3 {
+  color: rgba(0, 0, 0, 0.87);
 }

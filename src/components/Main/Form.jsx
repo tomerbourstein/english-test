@@ -35,16 +35,30 @@ const Form = () => {
     <form onSubmit={handleSubmitCategory}>
       <TextField
         label={<StarBorderOutlinedIcon />}
-        placeholder="Enter Category"
+        placeholder="Enter Subject"
         variant="outlined"
         size="small"
         autoComplete="off"
-        error={categoryHasError}
         value={enteredCategory}
         onBlur={categoryBlurHandler}
         onChange={categoryChangeHandler}
+        sx={{
+          focusColor: "red",
+        }}
       />
-      <Fab size="small" color="secondary" type="submit">
+      <Fab
+        size="small"
+        sx={{
+          background: "#11CBD7",
+          color: "white",
+          transition: "color background .2s",
+          ":hover": {
+            color: "#11CBD7",
+            transition: "color background .2s ease",
+          },
+        }}
+        type="submit"
+      >
         GO
       </Fab>
     </form>
