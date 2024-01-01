@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import TutorLogo from "../../assets/images/tutor_logo.svg";
 
 import classes from "./Header.module.css";
 import Timer from "./Timer";
@@ -6,7 +7,7 @@ import Timer from "./Timer";
 const Header = () => {
   return (
     <header className={classes.header}>
-      <Typography>AI Tutor</Typography>
+      <img src={TutorLogo} />
       <Timer />
     </header>
   );

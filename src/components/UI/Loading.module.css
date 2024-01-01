@@ -1,14 +1,24 @@
 .container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
 }
 .loadingText {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.loadingText p {
+  font-weight: bold;
+  
 }
 .loading {
   display: inline-block;
@@ -22,8 +32,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #1976d2;
-  border-color: #1976d2 transparent #1976d2 transparent;
+  border: 6px solid #11cbd7;
+  border-color: #11cbd7 transparent #11cbd7 transparent;
   animation: loading 1.2s linear infinite;
 }
 @keyframes loading {

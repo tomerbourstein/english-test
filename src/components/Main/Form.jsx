@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { fetchChatCompletion } from "../../utils/requests";
+import { chatActions } from "../../store/chatSlice";
 import useInput from "../../hooks/use-input";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
@@ -20,24 +21,44 @@ const Form = () => {
 
   const handleSubmitCategory = (event) => {
     event.preventDefault();
-    // Dispatch the thunk function to trigger the API call
-    dispatch(fetchChatCompletion(enteredCategory));
+    dispatch(chatActions.saveCategory(enteredCategory));
+    dispatch(chatActions.toggleDisplayArticle(true));
+    dispatch(
+      fetchChatCompletion({
+        enteredCategory: enteredCategory,
+        testAnswers: null,
+      })
+    );
     categoryResetHandler("");
   };
   return (
     <form onSubmit={handleSubmitCategory}>
       <TextField
         label={<StarBorderOutlinedIcon />}
-        placeholder="Enter Category"
+        placeholder="Enter Subject"
         variant="outlined"
         size="small"
         autoComplete="off"
-        error={categoryHasError}
         value={enteredCategory}
         onBlur={categoryBlurHandler}
         onChange={categoryChangeHandler}
+        sx={{
+          focusColor: "red",
+        }}
       />
-      <Fab size="small" color="secondary" type="submit">
+      <Fab
+        size="small"
+        sx={{
+          background: "#11CBD7",
+          color: "white",
+          transition: "color background .2s",
+          ":hover": {
+            color: "#11CBD7",
+            transition: "color background .2s ease",
+          },
+        }}
+        type="submit"
+      >
         GO
       </Fab>
     </form>

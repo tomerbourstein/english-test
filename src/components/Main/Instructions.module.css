@@ -1,9 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 2rem;
+}
+
 .instructions {
-  width: 60%;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  padding-top: 102px;   
+  padding-top: 2rem;
+}
+.instructions h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructions img {
+  padding: 0 .6rem;
+}
+.crop {
+  width: 15rem;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+.crop img {
+  width: 35rem;
+  margin: 0 -250px;
+  mix-blend-mode: multiply;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 p {

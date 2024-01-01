@@ -1,0 +1,108 @@
+@import url("https://fonts.cdnfonts.com/css/a-amanah-guru");
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.summary {
+  width: 40%;
+}
+
+.summary ::-moz-selection {
+  background: #d80032;
+  color: #f4f3f2;
+}
+
+.summary ::selection {
+  background: #d80032;
+  color: #f4f3f2;
+}
+.startOver button {
+  width: 100%;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+.startOver button:hover {
+  color: #f4f3f2;
+  background-color: rgba(30, 30, 30, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+.numericAndVerbal {
+  font-family: "a Amanah Guru", sans-serif;
+  font-size: 3rem;
+}
+.numericAndVerbal > h2,
+.numericAndVerbal > p {
+  color: #d80032;
+}
+
+.numericAndVerbal > * {
+  margin: 1rem;
+}
+
+.animations {
+  width: 30rem;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.animationsContainer {
+  position: relative;
+}
+
+.animationsContainer > div {
+  position: absolute;
+  width: 2rem;
+  height: 0.5rem;
+}
+
+.animationsContainer > div::before {
+  content: "";
+  position: absolute;
+  transform: translate(500%, 1500%);
+
+  width: 100%;
+  height: 100%;
+  background: #d80032;
+  clip-path: polygon(50% 0%, 60% 50%, 50% 100%, 40% 50%);
+  opacity: 1;
+  pointer-events: none;
+  animation: blink 2s infinite;
+}
+
+.animationsContainer > div:first-of-type::before {
+  transform: translate(700%, 1600%);
+  animation-delay: 0.5s;
+}
+
+.animationsContainer > div:nth-of-type(2)::before {
+  transform: translate(300%, 2600%);
+  animation-delay: 1s;
+}
+.animationsContainer > div:nth-of-type(3)::before {
+  transform: translate(380%, 2000%);
+  animation-delay: 1.33s;
+}
+
+.animationsContainer > div:nth-of-type(4)::before {
+  transform: translate(880%, 2200%);
+  animation-delay: 0.87s;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
