@@ -12,7 +12,14 @@
   flex-direction: column;
   padding-top: 2rem;
 }
-
+.instructions h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructions img {
+  padding: 0 .6rem;
+}
 .crop {
   width: 15rem;
   overflow: hidden;

@@ -20,8 +20,14 @@ const Summary = (props) => {
   return (
     <div className={classes.container}>
       <div className={classes.crop}>
-        <img src={SummaryIcon} />
-        <div className={classes.shape}></div>
+        <div className={classes.animationsContainer}>
+          <div className={classes.animations}></div>
+          <div className={classes.animations}></div>
+          <div className={classes.animations}></div>
+          <div className={classes.animations}></div>
+          <div className={classes.animations}></div>
+          <img className={classes.animations} src={SummaryIcon} />
+        </div>
       </div>
       <div className={classes.summary}>
         <div className={classes.numericAndVerbal}>
@@ -31,7 +37,7 @@ const Summary = (props) => {
         <Questions result={result} validQuestions={questions} />
         <div className={classes.startOver}>
           <Button variant="contained" onClick={startOverHandler}>
-            start over
+            go back{" "}
           </Button>
         </div>
       </div>

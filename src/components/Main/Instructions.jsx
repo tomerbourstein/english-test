@@ -1,12 +1,17 @@
-import { Image } from "@mui/icons-material";
 import Form from "./Form";
+
+import WavingHand from "../../assets/images/waving-hand-48.png";
 import classes from "./Instructions.module.css";
 
 const Instructions = () => {
   return (
     <div className={classes.container}>
       <div className={classes.instructions}>
-        <h2>Welcome to your AI English Tutor,</h2>
+        <h2>
+          HI!
+          I'm your AI Tutor
+          <img src={WavingHand} />
+        </h2>
         <h3>before you begin please read the following instructions </h3>
         <p>Read The entire article before answering all questions</p>
         <p>The answers to the questions are provided in the text</p>
