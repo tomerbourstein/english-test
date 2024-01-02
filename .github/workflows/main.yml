@@ -24,4 +24,4 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          TEST: ${{secrets.TEST}}
+          VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
