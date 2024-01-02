@@ -14,7 +14,7 @@ function App() {
   const isLoading = useSelector((state) => state.chat.isLoading);
   const timeOver = useSelector((state) => state.chat.timeOver);
 
-  console.log("This is a test: ");
+  console.log("This is a test:");
   console.log(import.meta.env.TEST);
   return (
     <>
