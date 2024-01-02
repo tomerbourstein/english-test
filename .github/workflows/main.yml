@@ -21,8 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set VITE_OPENAI_API_KEY
-        run: echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env
-
-      - name: Build App
-        run: npm run build
+      - name: Build
+        run: vite build
+        env:
+          TEST: ${{secrets.TEST}}
