@@ -24,5 +24,5 @@ jobs:
       - name: Set VITE_OPENAI_API_KEY
         run: echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env
 
-      - name: Build
+      - name: Build App
         run: npm run build
