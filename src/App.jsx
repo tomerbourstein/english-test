@@ -15,7 +15,7 @@ function App() {
   const timeOver = useSelector((state) => state.chat.timeOver);
 
   console.log("This is a test:");
-  console.log(import.meta.env.TEST);
+  console.log(import.meta.env.VITE_OPENAI_API_KEY);
   return (
     <>
       {isLoading && <Loading />}
