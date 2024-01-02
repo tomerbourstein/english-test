@@ -22,6 +22,6 @@ jobs:
         run: npm install
 
       - name: Build
-        run: vite build
+        run: npm run build
         env:
           TEST: ${{secrets.TEST}}
