@@ -3,9 +3,13 @@
 .container {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem 1rem 0;
+  padding-bottom: 12.5rem;
 }
 
+.cropMobile {
+  display: none;
+}
 .summary {
   width: 40%;
 }
@@ -104,5 +108,51 @@
 
   50% {
     opacity: 1;
+  }
+}
+
+/* Media query for screens smaller than 430px */
+@media only screen and (max-width: 430px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .summary {
+    width: 100%;
+  }
+  .crop {
+    display: none;
+  }
+
+  .cropMobile {
+    display: block;
+  }
+  .numericAndVerbal {
+    font-size: 3rem;
+  }
+
+  .animations {
+    width: 100%;
+    margin: -5rem 0 -2rem;
+  }
+
+  .animationsContainer > div::before {
+    transform: translate(380%, 1200%);
+  }
+
+  .animationsContainer > div:first-of-type::before {
+    transform: translate(700%, 1500%);
+  }
+
+  .animationsContainer > div:nth-of-type(2)::before {
+    transform: translate(250%, 2400%);
+  }
+  .animationsContainer > div:nth-of-type(3)::before {
+    transform: translate(280%, 1900%);
+  }
+
+  .animationsContainer > div:nth-of-type(4)::before {
+    transform: translate(700%, 2100%);
   }
 }

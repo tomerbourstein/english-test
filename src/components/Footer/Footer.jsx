@@ -9,7 +9,6 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <section className={classes.footer}>
-      {/* <div className={classes.footerItems}> */}
       <div className={classes.copyrights}>
         <img src={TutorLogo} />
         <Typography>Copyright © 2023 Tomer</Typography>
@@ -26,7 +25,6 @@ const Footer = () => {
           <TwitterIcon />
         </IconButton>
       </div>
-      {/* </div> */}
     </section>
   );
 };

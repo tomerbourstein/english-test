@@ -8,8 +8,7 @@ const Instructions = () => {
     <div className={classes.container}>
       <div className={classes.instructions}>
         <h2>
-          HI!
-          I'm your AI Tutor
+          HI! I'm your AI Tutor
           <img src={WavingHand} />
         </h2>
         <h3>before you begin please read the following instructions </h3>

@@ -19,3 +19,15 @@
   -o-user-select: none;
   user-select: none;
 }
+
+/* Media query for screens smaller than 430px */
+@media only screen and (max-width: 430px) {
+  .header {
+    gap: 1rem;
+    justify-content: space-around;
+  }
+
+  .header > img {
+    width: 10rem;
+  }
+}

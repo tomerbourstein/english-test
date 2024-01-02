@@ -18,7 +18,7 @@
   justify-content: center;
 }
 .instructions img {
-  padding: 0 .6rem;
+  padding: 0 0.6rem;
 }
 .crop {
   width: 15rem;
@@ -42,4 +42,28 @@ p {
 }
 .startAction {
   margin-top: 2rem;
+}
+
+/* Media query for screens smaller than 430px */
+@media only screen and (max-width: 430px) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.2rem;
+    position: relative;
+  }
+
+  .container p {
+    color: #000;
+  }
+  .crop {
+    position: absolute;
+  }
+  .crop img {
+    position: relative;
+    top: 0;
+    width: 35rem;
+    z-index: 0;
+    opacity: 0.2;
+  }
 }

@@ -3,32 +3,33 @@
   display: flex;
   flex-direction: row;
   color: #353535;
-  /* border-radius: 100%; */
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  -moz-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 0.8rem 0.2rem;
+  font-size: 2rem;
 }
 
 .cdBox {
   width: 100%;
-  margin: 0.8rem 0.2rem;
-  font-size: 2rem;
-  /* border-radius: 30px; */
-  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  -moz-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 p.numbers {
   margin: 0;
   height: 3rem;
-
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
 }
+
 p.block {
   margin: 0;
   height: 0.8rem;
   color: #ffffff;
   background: #d80032;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }

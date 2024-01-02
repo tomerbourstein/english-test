@@ -34,6 +34,16 @@ const Summary = (props) => {
           <h2>{result.numericScore} / 10</h2>
           <p>{result.verbalScore}</p>
         </div>
+        <div className={classes.cropMobile}>
+          <div className={classes.animationsContainer}>
+            <div className={classes.animations}></div>
+            <div className={classes.animations}></div>
+            <div className={classes.animations}></div>
+            <div className={classes.animations}></div>
+            <div className={classes.animations}></div>
+            <img className={classes.animations} src={SummaryIcon} />
+          </div>
+        </div>
         <Questions result={result} validQuestions={questions} />
         <div className={classes.startOver}>
           <Button variant="contained" onClick={startOverHandler}>
