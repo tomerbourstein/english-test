@@ -20,10 +20,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+#Allow repo secrets
+env:
+  VITE_OPEN_AI_API_KEY: ${{ secrets.VITE_OPEN_AI_API_KEY }}
+
 jobs:
-  #Allow repo secrets
-  env:
-    VITE_OPEN_AI_API_KEY: ${{ secrets.VITE_OPEN_AI_API_KEY }}
   # Single deploy job since we're just deploying
   deploy:
     environment:
