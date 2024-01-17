@@ -6,7 +6,7 @@
   .article {
     width: 100%;
   }
-  h1 {
+  .article > h1 {
     width: 100%;
   }
 }

@@ -32,7 +32,7 @@ const Form = () => {
     categoryResetHandler("");
   };
   return (
-    <form onSubmit={handleSubmitCategory}>
+    <form className={classes.categoryInput} onSubmit={handleSubmitCategory}>
       <TextField
         label={<StarBorderOutlinedIcon />}
         placeholder="Enter Subject"
