@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { chatActions } from "../../store/chatSlice";
 import Questions from "./Questions";
 import Button from "@mui/material/Button";
-import SummaryIcon from "../../assets/images/summary-icon.png";
+import SummaryIcon from "../../../public/summary-icon.png";
 
 import classes from "./Summary.module.css";
 const Summary = (props) => {
@@ -26,7 +26,7 @@ const Summary = (props) => {
           <div className={classes.animations}></div>
           <div className={classes.animations}></div>
           <div className={classes.animations}></div>
-          <img className={classes.animations} src={SummaryIcon} />
+          <img className={classes.animations} src={SummaryIcon.src} />
         </div>
       </div>
       <div className={classes.summary}>

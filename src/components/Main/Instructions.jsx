@@ -1,6 +1,6 @@
 import Form from "./Form";
 
-import WavingHand from "../../assets/images/waving-hand-48.png";
+import WavingHand from "../../../public/waving-hand-48.png";
 import classes from "./Instructions.module.css";
 
 const Instructions = () => {
@@ -9,7 +9,7 @@ const Instructions = () => {
       <div className={classes.instructions}>
         <h2>
           HI! I'm your AI Tutor
-          <img src={WavingHand} />
+          <img src={WavingHand.src} />
         </h2>
         <h3>before you begin please read the following instructions </h3>
         <p>Read The entire article before answering all questions</p>
