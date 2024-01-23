@@ -37,7 +37,7 @@
   user-select: none;
 }
 
-p {
+.instructions p {
   margin: 0.2rem;
 }
 .startAction {
