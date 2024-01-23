@@ -35,14 +35,11 @@ export const fetchChatCompletion = createAsyncThunk(
       ? messagesWithUserAnswers
       : messagesInitial;
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_PATH}/api/chat`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ requestMessages }),
-      }
-    );
+    const response = await fetch(`/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ requestMessages }),
+    });
 
     const data = await response.json();
     if (response.status === 200) {
