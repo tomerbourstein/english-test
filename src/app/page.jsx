@@ -1,10 +1,10 @@
 "use client";
-import store from "../../store/store.js";
+import store from "../store/store.js";
 import { Provider } from "react-redux";
 
 import dynamic from "next/dynamic";
 
-const App = dynamic(() => import("../../App"), { ssr: false });
+const App = dynamic(() => import("../App.jsx"), { ssr: false });
 
 export default function Page() {
   return (
