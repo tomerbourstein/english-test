@@ -36,7 +36,7 @@ export const fetchChatCompletion = createAsyncThunk(
       : messagesInitial;
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_PATH}/api/chat`,
+      `/english-test/api/chat`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
